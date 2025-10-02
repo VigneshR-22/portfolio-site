@@ -6,81 +6,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vignesh Ramesh | Backend Developer</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Vignesh Ramesh</h1>
-        <p>Java Backend Developer | GCP Certified</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I specialize in Java, Spring Boot, microservices, and cloud-native backend systems.
-            I am passionate about building scalable and efficient applications.
-            I hold a GCP certification and have experience with various cloud services.
-        </p>
-    </section>
+    <!-- Horizontal Scroll Container -->
+    <div class="horizontal-scroll">
+        <!-- Intro Section with Header -->
+        <section id="intro" class="section animate-on-scroll">
+            <div class="header-wrapper">
+                <header>
+                    <img src="assets/images/vignesh.jpg" alt="Vignesh's photo" class="profile-pic" />
+                    <h1>Vignesh Ramesh</h1>
+                    <p>Java Backend Developer | GCP Certified</p>
+                </header>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Professional Experience</h2>
+        <!-- About Section -->
+        <section id="about" class="section animate-on-scroll">
+            <h2>About Me</h2>
+            <p>
+                I'm a backend engineer with 4.5 years of experience building scalable, cloud-native systems using Java,
+                Spring Boot, and microservices. I specialize in designing event-driven architectures and optimizing
+                performance across distributed environments. As a GCP-certified developer, I have architected resilient
+                workflows and reduced infrastructure costs through smart automation.
+            </p>
+            <p>
+                Beyond backend, I am actively expanding into frontend development — crafting responsive, animated
+                interfaces
+                with HTML, CSS, and JavaScript. I value clean code, semantic markup, and professional presentation
+                across
+                the stack.
+            </p>
+        </section>
 
-        <div class="job">
-            <h3>Lead Engineer, HCL Technologies</h3>
-            <p><em>Chennai, TN — May 2024 to Present</em></p>
-            <ul>
-                <li>Built a robust PLM adapter using Java and Spring Boot with Chain of Responsibility pattern.</li>
-                <li>Designed a vendor-agnostic data pipeline for Data-Centric Architecture (DCA).</li>
-                <li>Architected an event-driven workflow using Pub/Sub for multi-step data sync.</li>
-                <li>Reduced GCP storage costs by 10% via lifecycle rules for object cleanup.</li>
-                <li>Improved system performance by 60% by eliminating false positive attributes.</li>
-                <li>Enhanced maintainability through peer reviews and strategic refactoring.</li>
-            </ul>
-        </div>
+        <!-- Experience Section -->
+        <section id="experience" class="section animate-on-scroll">
+            <h2>Professional Experience</h2>
 
-        <div class="job">
-            <h3>Senior Systems Engineer, Infosys Limited</h3>
-            <p><em>Bengaluru, KA — Mar 2021 to May 2024</em></p>
-            <ul>
-                <li>Developed and tested REST APIs using Java, Spring Boot, and microservices.</li>
-                <li>Delivered a critical client segmentation project under tight deadlines.</li>
-                <li>Received consistent client appreciation for high-quality deliverables.</li>
-                <li>Recognized as a top performer and awarded for outstanding contributions.</li>
-            </ul>
-        </div>
-    </section>
+            <div class="job">
+                <h3>Lead Engineer, HCL Technologies</h3>
+                <p><em>Chennai, TN — May 2024 to Present</em></p>
+                <ul>
+                    <li>Built a robust PLM adapter using Java and Spring Boot with Chain of Responsibility pattern.</li>
+                    <li>Designed a vendor-agnostic data pipeline for Data-Centric Architecture (DCA).</li>
+                    <li>Architected an event-driven workflow using Pub/Sub for multi-step data sync.</li>
+                    <li>Reduced GCP storage costs by 10% via lifecycle rules for object cleanup.</li>
+                    <li>Improved system performance by 60% by eliminating false positive attributes.</li>
+                    <li>Enhanced maintainability through peer reviews and strategic refactoring.</li>
+                </ul>
+            </div>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Java, Spring Boot, REST APIs</li>
-            <li>Microservices, Event-driven Architecture</li>
-            <li>Google Cloud Platform (GCP)</li>
-            <li>Git, GitHub, CI/CD</li>
-        </ul>
-    </section>
+            <div class="job">
+                <h3>Senior Systems Engineer, Infosys Limited</h3>
+                <p><em>Bengaluru, KA — Mar 2021 to May 2024</em></p>
+                <ul>
+                    <li>Developed and tested REST APIs using Java, Spring Boot, and microservices.</li>
+                    <li>Delivered a critical client segmentation project under tight deadlines.</li>
+                    <li>Received consistent client appreciation for high-quality deliverables.</li>
+                    <li>Recognized as a top performer and awarded for outstanding contributions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section animate-on-scroll">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div><i class="fas fa-code"></i> Java</div>
+                <div><i class="fas fa-leaf"></i> Spring Boot</div>
+                <div><i class="fas fa-plug"></i> REST APIs</div>
+                <div><i class="fas fa-cubes"></i> Microservices</div>
+                <div><i class="fas fa-bolt"></i> Event-driven Architecture</div>
+                <div><i class="fas fa-cloud"></i> Google Cloud Platform (GCP)</div>
+                <div><i class="fab fa-git-alt"></i> Git</div>
+                <div><i class="fab fa-github"></i> GitHub</div>
+                <div><i class="fas fa-sync-alt"></i> CI/CD</div>
+            </div>
+        </section>
 
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: viggy22vs@gmail.com</p>
-        <p>GitHub: <a href="https://github.com/VigneshR-22" target="_blank">Vignesh Ramesh</a></p>
-    </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="section animate-on-scroll">
+            <h2>Get in Touch</h2>
+            <p>If you'd like to collaborate, discuss backend architecture, or just say hi — I'm always open to
+                meaningful conversations.</p>
+
+            <div class="contact-grid">
+                <div class="contact-item" title="Send me an email">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:viggy22vs@gmail.com">viggy22vs@gmail.com</a>
+                </div>
+                <div class="contact-item" title="Visit my GitHub profile">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/VigneshR-22" target="_blank">Vignesh Ramesh</a>
+                </div>
+                <div class="contact-item" title="Download my resume">
+                    <i class="fas fa-file-alt"></i>
+                    <a href="assets/Vignesh Ramesh.pdf" download>Download Resume</a>
+                </div>
+                <div class="contact-item" title="Connect with me on LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/vigneshr22" target="_blank">LinkedIn Profile</a>
+                </div>
+
+            </div>
+
+            <div class="footer-banner">Thanks for visiting ✨</div>
+            <p class="footer-note">Built with ❤️ by Vignesh Ramesh</p>
+        </section>
+
+
+    </div>
+
+    <!-- Arrow Buttons -->
+    <div class="scroll-arrows">
+        <button id="scroll-left"><i class="fas fa-chevron-left"></i></button>
+        <button id="scroll-right"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Vignesh</p>
+        <p>© 2025 Vignesh Ramesh</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+    <script>
+        tsParticles.load("particles-js", {
+            particles: {
+                number: { value: 50 },
+                color: { value: "#90caf9" },
+                shape: {
+                    type: ["polygon", "triangle", "star"],
+                    polygon: { sides: 5 },
+                    stroke: { width: 0, color: "#90caf9" }
+                },
+                opacity: { value: 0.4 },
+                size: { value: 3 },
+                move: { enable: true, speed: 1 }
+            },
+            background: { color: "#121212" }
+        });
+    </script>
 </body>
 
 </html>
