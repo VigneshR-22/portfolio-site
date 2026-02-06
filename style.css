@@ -5,7 +5,6 @@ body {
   padding: 0;
   background: #121212;
   color: #eee;
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -19,25 +18,7 @@ body {
   z-index: -1;
 }
 
-/* Header Section */
-.header-wrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 1;
-  position: relative;
-}
-
-header {
-  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
-  color: white;
-  text-align: center;
-  padding: 40px;
-  border-bottom: 1px solid #333;
-}
-
+/* Profile image */
 .profile-pic {
   width: 150px;
   height: 150px;
@@ -48,104 +29,147 @@ header {
   margin-bottom: 10px;
 }
 
-/* Horizontal Scroll Container */
-.horizontal-scroll {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  width: 100vw;
-  height: 100vh;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* Fullscreen Horizontal Sections */
-.horizontal-scroll .section {
-  flex: 0 0 100vw;
-  scroll-snap-align: start;
-  height: 100vh;
-  padding: 60px 80px;
-  box-sizing: border-box;
-  overflow-y: auto;
+/* Card Grid Layout (vertical stack) */
+.card-grid {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Card styles */
+.card {
+  background: #1a1a1a;
+  color: #90caf9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  opacity: 0; /* for fade-in animation */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #222;
+  box-shadow: 0 0 15px rgba(144, 202, 249, 0.7), 0 0 30px rgba(144, 202, 249, 0.4);
+}
+
+/* Intro card default (docked) */
+#intro {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Splash initial state (full screen) */
+#intro.splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  align-items: center;
+  background: #121212;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
 }
 
-.horizontal-scroll .section.visible {
-  opacity: 1;
-  transform: translateX(0);
+/* Docked state (normal card in grid) */
+#intro.docked {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 30px;
+  z-index: 1;
 }
 
-/* Scroll-triggered animation */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+/* Intro card docked at top */
+.intro-card {
+  order: -1;
+  background: #1a1a1a;
+  text-align: center;
+  padding: 30px;
+  transition: all 0.5s ease-in-out;
+  cursor: default
 }
 
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+.intro-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #90caf9;
 }
 
-/* Resume Button */
-.resume-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #90caf9;
-  color: #121212;
-  text-decoration: none;
-  border-radius: 5px;
+/* Animations */
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  color: #eee;
+  z-index: 3000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex; /* center modal content */
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content {
+  max-width: 800px;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: #90caf9;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
   font-weight: bold;
+  color: #121212;
   transition: background 0.3s ease;
 }
 
-.resume-btn:hover {
-  background-color: #64b5f6;
+.close-btn:hover {
+  background: #64b5f6;
 }
 
-/* Experience Section */
-.job {
-  margin-bottom: 30px;
-}
-
-.job h3 {
-  margin-bottom: 5px;
-  color: #90caf9;
-}
-
-.job p {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.job ul {
-  padding-left: 20px;
-}
-
-/* Skills Section */
-#skills h2 {
-  color: #90caf9;
-  margin-bottom: 10px;
-}
-
+/* Skills Grid inside modal */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  display: flex;              /* use flexbox instead of grid */
+  flex-wrap: wrap;            /* allow wrapping to next line if needed */
+  gap: 20px;                  /* spacing between items */
+  justify-content: center;    /* center items horizontally */
   margin-top: 20px;
 }
 
 .skills-grid div {
+  flex: 0 1 180px;            /* each skill tile ~180px wide */
   background: #1a1a1a;
   padding: 16px;
   border-radius: 8px;
@@ -171,36 +195,7 @@ header {
   background: #222;
 }
 
-/* Arrow Buttons */
-.scroll-arrows {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 999;
-  pointer-events: none;
-}
-
-.scroll-arrows button {
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #90caf9;
-  font-size: 1.5rem;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  pointer-events: auto;
-  transition: background 0.3s ease;
-}
-
-.scroll-arrows button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Contact Section */
+/* Contact Section inside modal */
 .contact-grid {
   display: flex;
   flex-direction: column;
@@ -238,18 +233,6 @@ header {
   font-weight: 500;
 }
 
-/* Contact Section Animation */
-#contact.section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-#contact.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Footer */
 footer {
   background: #111;
@@ -278,38 +261,8 @@ footer {
 
 /* Responsive layout */
 @media (max-width: 600px) {
-  header {
-    padding: 20px;
-  }
-
   .profile-pic {
     width: 100px;
     height: 100px;
-  }
-
-  .horizontal-scroll .section {
-    padding: 30px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  p, li {
-    font-size: 1rem;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .scroll-arrows button {
-    font-size: 1.8rem;
-    padding: 14px;
   }
 }
