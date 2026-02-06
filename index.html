@@ -16,33 +16,31 @@
 
   <!-- Card Dashboard -->
   <div class="card-grid">
-  <!-- Intro card (always visible at top after splash) -->
-  <div class="card intro-card" data-target="intro-card">
-    <img src="assets/vignesh.JPG" alt="Vignesh's photo" class="profile-pic" />
-    <h3>Vignesh Ramesh</h3>
-    <p>Java Backend Developer | GCP Certified</p>
+    <div class="card intro-card" data-target="intro">
+      <img src="assets/vignesh.JPG" alt="Vignesh's photo" class="profile-pic" />
+      <h3>Vignesh Ramesh</h3>
+      <p>Java Backend Developer | GCP Certified</p>
+    </div>
+
+    <div class="card" data-target="about">
+      <h3>About Me</h3>
+      <p>Backend engineer with 5 years of experience...</p>
+    </div>
+    <div class="card" data-target="experience">
+      <h3>Experience</h3>
+      <p>Lead Engineer at HCL, Senior Systems Engineer at Infosys...</p>
+    </div>
+    <div class="card" data-target="skills">
+      <h3>Skills</h3>
+      <p>Java, Spring Boot, REST APIs, GCP...</p>
+    </div>
+    <div class="card" data-target="contact">
+      <h3>Contact</h3>
+      <p>Email, GitHub, LinkedIn, Resume...</p>
+    </div>
   </div>
 
-  <div class="card" data-target="about">
-    <h3>About Me</h3>
-    <p>Backend engineer with 5 years of experience...</p>
-  </div>
-  <div class="card" data-target="experience">
-    <h3>Experience</h3>
-    <p>Lead Engineer at HCL, Senior Systems Engineer at Infosys...</p>
-  </div>
-  <div class="card" data-target="skills">
-    <h3>Skills</h3>
-    <p>Java, Spring Boot, REST APIs, GCP...</p>
-  </div>
-  <div class="card" data-target="contact">
-    <h3>Contact</h3>
-    <p>Email, GitHub, LinkedIn, Resume...</p>
-  </div>
-</div>
-
-
-  <!-- Modals with full content -->
+  <!-- Modals -->
   <div class="modal" id="intro">
     <div class="modal-content">
       <img src="assets/vignesh.JPG" alt="Vignesh's photo" class="profile-pic" />
@@ -55,7 +53,7 @@
     <div class="modal-content">
       <h2>About Me</h2>
       <p>
-        I'm a backend engineer with 4.5 years of experience building scalable, cloud-native systems using Java,
+        I'm a backend engineer with 5 years of experience building scalable, cloud-native systems using Java,
         Spring Boot, and microservices. I specialize in designing event-driven architectures and optimizing
         performance across distributed environments. As a GCP-certified developer, I have architected resilient
         workflows and reduced infrastructure costs through smart automation.
@@ -154,11 +152,7 @@
       particles: {
         number: { value: 50 },
         color: { value: "#90caf9" },
-        shape: {
-          type: ["polygon", "triangle", "star"],
-          polygon: { sides: 5 },
-          stroke: { width: 0, color: "#90caf9" }
-        },
+        shape: { type: ["polygon", "triangle", "star"], polygon: { sides: 5 }, stroke: { width: 0, color: "#90caf9" } },
         opacity: { value: 0.4 },
         size: { value: 3 },
         move: { enable: true, speed: 1 }
